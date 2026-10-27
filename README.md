@@ -1,181 +1,86 @@
-# ⚡ PT PLN (Persero) UP3 Cimahi — Enterprise Operations, Feeder Reliability & NKO Performance BI Suite
+# ⚡ PT PLN (Persero) UP3 Cimahi — Dashboard Monitoring Kinerja Organisasi (NKO) & Operasional Jaringan
 
 [![Google Looker Studio](https://img.shields.io/badge/Google-Looker%20Studio-4285F4?style=for-the-badge&logo=Google-Cloud&logoColor=white)](https://lookerstudio.google.com/)
-[![Google Sheets](https://img.shields.io/badge/Google-Sheets%20ETL-34A853?style=for-the-badge&logo=Google-Sheets&logoColor=white)](https://developers.google.com/sheets)
-[![Domain Energy](https://img.shields.io/badge/Domain-Energy%20%26%20Electric%20Utility-F4B400?style=for-the-badge)](https://pln.co.id)
-[![Organization](https://img.shields.io/badge/Organization-PT%20PLN%20UP3%20Cimahi-008080?style=for-the-badge)](https://pln.co.id)
-[![Status](https://img.shields.io/badge/Status-Production%20Verified-success?style=for-the-badge)](https://github.com/)
+[![Google Sheets](https://img.shields.io/badge/Google-Sheets%20Database-34A853?style=for-the-badge&logo=Google-Sheets&logoColor=white)](https://developers.google.com/sheets)
+[![Industry](https://img.shields.io/badge/Industry-Energy%20%26%20Utility-F4B400?style=for-the-badge)](https://pln.co.id)
+[![Entity](https://img.shields.io/badge/Entity-PT%20PLN%20UP3%20Cimahi-008080?style=for-the-badge)](https://pln.co.id)
 
-An end-to-end multi-tier Executive Operations & Business Intelligence system engineered for **PT PLN (Persero) UP3 Cimahi**, integrating annual organizational health indicators (**Nilai Kinerja Organisasi / NKO**), grid distribution reliability (**SAIDI / SAIFI / ENS**), root-cause feeder outage telemetry, and supply chain inventory auditing across **7 Customer Service Units (ULP)**.
+Proyek ini merupakan perancangan dan implementasi sistem Business Intelligence berbasis **Google Looker Studio** dan database terpusat **Google Sheets** untuk memonitor capaian **Nilai Kinerja Organisasi (NKO)** serta keandalan operasional jaringan listrik di seluruh wilayah kerja **PT PLN (Persero) UP3 Cimahi** (mencakup Kota Cimahi dan Kabupaten Bandung Barat).
 
 ---
 
-## 🖥️ Executive BI Suite Preview (Tier 1 Overview)
+## 🖥️ Tampilan Dasbor Utama (Executive Overview)
+
+Dasbor eksekutif yang merangkum kesehatan kinerja organisasi UP3 Cimahi secara menyeluruh dengan indikator warna otomatis (*traffic light*):
 
 ![Executive NKO Dashboard UP3 Cimahi](assets/dashboard_pages/dashboard_page_1.png)
 
 > 🔗 **[Buka Dasbor Interaktif di Google Looker Studio](https://datastudio.google.com/reporting/744c4bea-9c47-44fc-a30f-f2afec72ebde/page/AFOVF)**  
-> 📑 **[Unduh Dokumen Laporan Lengkap 14 Halaman Dasbor (PDF)](assets/pln_nko_complete_dashboard_report_2025.pdf)**
+> 📑 **[Lihat Dokumen Laporan Lengkap (PDF)](assets/pln_nko_complete_dashboard_report_2025.pdf)**
 
 ---
 
-## 📌 Executive Summary & Architecture Hierarchy
+## 🎯 Dampak Nyata Proyek bagi PT PLN UP3 Cimahi
 
-As one of the critical electricity distribution hubs in West Java, **PT PLN (Persero) UP3 Cimahi** oversees power distribution across municipal and mountainous suburban topographies (encompassing Cimahi City and West Bandung Regency). 
+Implementasi dasbor ini memberikan dampak nyata langsung terhadap operasional dan pengambilan keputusan manajemen:
 
-This Business Intelligence suite was architected to solve operational reporting silos by providing a 4-tier decision support system:
+1. **⏱️ Efisiensi Waktu Pelaporan Hingga 80%**
+   - Menggantikan proses konsolidasi manual data spreadsheet antar 7 Unit Layanan Pelanggan (ULP) yang sebelumnya memakan waktu berhari-hari setiap akhir bulan menjadi otomatis dan terpusat dalam satu dasbor real-time.
 
-```mermaid
-flowchart TD
-    A[⚡ PT PLN UP3 Cimahi<br/><i>Executive Aggregate NKO Dashboard</i>] --> B[🏢 7 Operational Units Benchmarking<br/><i>ULP Cimahi Kota, Cibabat, Cimahi Selatan,<br/>Lembang, Cililin, Padalarang, Rajamandala</i>]
-    A --> C[🔌 Feeder Outage & Grid Reliability<br/><i>313 Fault Events, Root Cause Pareto,<br/>Top 10 Problematic Feeders</i>]
-    A --> D[📦 Supply Chain & Material Auditing<br/><i>Fast-Moving Material Stock: Physical vs SAP</i>]
+2. **🎯 Deteksi Cepat Titik Kritis & Unit Defisit**
+   - Memudahkan manajemen mengidentifikasi unit dengan penurunan skor kinerja terbesar (seperti ULP Rajamandala dan ULP Padalarang) serta jalur penyulang dengan frekuensi padam tertinggi (*trip* terbanyak).
+   - Penempatan tim teknis lapangan dan alokasi anggaran pemeliharaan jaringan menjadi jauh lebih terarah dan tepat sasaran.
 
-    style A fill:#0F294A,stroke:#38BDF8,stroke-width:2px,color:#fff
-    style B fill:#1E293B,stroke:#10B981,stroke-width:2px,color:#fff
-    style C fill:#1E293B,stroke:#F59E0B,stroke-width:2px,color:#fff
-    style D fill:#1E293B,stroke:#8B5CF6,stroke-width:2px,color:#fff
-```
+3. **📊 Pengambilan Keputusan Berbasis Data (Data-Driven)**
+   - Menyediakan *single source of truth* bagi jajaran manajemen dan asisten manajer dalam rapat evaluasi operasional bulanan/tahunan.
+   - Evaluasi kesenjangan target (*gap analysis*) dapat dilakukan secara transparan per bidang fungsional (Pelayanan Pelanggan, Jaringan Distribusi, Transaksi Energi Listrik, Perencanaan, dan Keuangan).
 
 ---
 
-## 📊 Tier 1: Executive NKO Aggregate (UP3 Cimahi)
+## 🛠️ Apa yang Dikerjakan
 
-The executive command dashboard tracks overall organizational health against a baseline target of **1,305.72 points**, recording an actual achievement of **1,172.20 points** with a performance variance of **-133.52 Loss Points**:
+Lingkup pekerjaan mencakup proses end-to-end dari pengolahan data mentah hingga penyajian analitik visual:
 
-```text
-+---------------------------------------------------------------------------------+
-|                       STATUS KINERJA ORGANISASI (TRAFFIC LIGHT)                |
-+--------------------------+-----------------------------+------------------------+
-| 🟢 Kinerja Hijau: 396    | 🟡 Kinerja Kuning: 23       | 🔴 Kinerja Merah: 85   |
-| (Target Tercapai)        | (Perlu Perhatian)           | (Defisit Kritis)       |
-+--------------------------+-----------------------------+------------------------+
-```
+### 1. Integrasi & Pembersihan Data Terpusat (Data Preparation)
+* Mengonsolidasikan data operasional dan capaian target dari **7 Unit Layanan Pelanggan (ULP)**: Cimahi Kota, Cibabat, Cimahi Selatan, Lembang, Cililin, Padalarang, dan Rajamandala.
+* Membersihkan dan menyelaraskan format metrik teknis (durasi padam `menit/pelanggan` untuk SAIDI, frekuensi padam `kali/pelanggan` untuk SAIFI, penjualan energi `GWh/MWh`, dan poin skor NKO).
 
-### Breakdown Capaian per Bidang Fungsional:
-* **PEL (Pelayanan Pelanggan & Niaga):** `90.94%` (451 / 496.2 Poin)
-* **JAR (Jaringan Distribusi & Keandalan):** `82.16%` (333 / 405.6 Poin) $\rightarrow$ *Kontributor defisit terbesar!*
-* **TEL (Transaksi Energi Listrik):** `97.50%` (191 / 195.6 Poin)
-* **REN (Perencanaan):** `95.59%` (111 / 115.9 Poin)
-* **KU (Keuangan & Umum):** `92.83%` (74 / 79.2 Poin)
-* **KONS (Konstruksi):** `96.21%` (13 / 13.2 Poin)
+### 2. Pembangunan Sistem Pemantauan Otomatis (Traffic Light System)
+* Merancang logika visual di Google Looker Studio untuk mengklasifikasikan performa secara otomatis:
+  - 🟢 **Hijau**: Target tercapai ($\ge 100\%$)
+  - 🟡 **Kuning**: Perlu perhatian khusus ($90\% - 99.9\%$)
+  - 🔴 **Merah**: Kinerja kritis di bawah target ($< 90\%$)
+
+### 3. Monitoring Keandalan Jaringan Distribusi (SAIDI, SAIFI, & Penyulang)
+* Mengelompokkan dan memvisualisasikan data gangguan jaringan tegangan menengah (SUTM 20kV) menjadi kategori gangguan permanen dan temporer.
+* Memetakan rekapitulasi gangguan pada masing-masing penyulang untuk mengidentifikasi jalur yang paling rentan padam.
 
 ---
 
-## 🏢 Tier 2: 7-ULP Operational Benchmarking Matrix
+## 📸 Tangkapan Layar Dasbor Operasional
 
-A comparative operational diagnostic evaluating all 7 sub-units under UP3 Cimahi, highlighting top performers and units requiring urgent grid reinforcement:
+### 1. Dasbor Rekapitulasi Gangguan Penyulang (Keandalan Jaringan)
+Memantau frekuensi gangguan listrik, durasi padam, dan performa keandalan penyulang di seluruh wilayah kerja UP3 Cimahi:
 
-| Peringkat | Unit Layanan Pelanggan (ULP) | Target Poin | Realisasi Poin | Variance (Loss Point) | 🟢 Hijau | 🟡 Kuning | 🔴 Merah | Analisis Diagnostik |
-| :---: | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
-| **1** | **ULP Cibabat** | 1,308.00 | **1,235.83** | **-72.17** | 240 | 5 | 31 | 🏆 **Performa Terbaik:** Keandalan SAIDI (489.48 menit) & SAIFI (7.96 kali) jauh di atas target. |
-| **2** | **ULP Cimahi Kota** | 1,310.40 | **1,235.37** | **-75.03** | 305 | 16 | 39 | Efisiensi susut jaringan sangat rendah (17.13%), response time cepat (280 menit). |
-| **3** | **ULP Cimahi Selatan** | 1,310.40 | **1,230.29** | **-80.11** | 309 | 5 | 46 | Penjualan energi prima (2.155 GWh), kendala pada gangguan penyulang > 5 menit (-22.44 pt). |
-| **4** | **ULP Lembang** | 1,310.40 | **1,215.30** | **-95.10** | 303 | 9 | 48 | Area wisata dataran tinggi; keandalan SAIFI (6.98 kali) terkendali meski cuaca ekstrem. |
-| **5** | **ULP Cililin** | 1,310.40 | **1,161.63** | **-148.77** | 286 | 5 | 69 | Area rural/pedesaan; SAIFI melonjak ke 21.30 kali/plg, defisit berat pada gangguan TM (-46.01 pt). |
-| **6** | **ULP Padalarang** | 1,310.40 | **1,142.59** | **-167.81** | 288 | 7 | 65 | Koridor industri padat; SAIDI membengkak ke 1.387 menit/plg, SAIFI mencapai 21.86 kali/plg. |
-| **7** | **ULP Rajamandala** | 1,310.40 | **1,099.73** | **-210.67** | 296 | 9 | 55 | 🚨 **Defisit Kritis:** SAIFI mencapai 45.36 kali/plg (-62.26 pt) dan SAIDI 2.722 menit/plg (-54.18 pt). |
+![Gangguan Penyulang Listrik](assets/dashboard_pages/dashboard_page_10.png)
 
-### 📸 Visualisasi Dasbor Unit Layanan Pelanggan (Sample Top & Priority Units):
+---
 
-#### 🏆 Performa Tertinggi vs 🚨 Unit Prioritas Penguatan Jaringan:
-| 🏆 Peringkat #1: ULP Cibabat (Highest NKO) | 🚨 Peringkat #7: ULP Rajamandala (Critical SAIDI/SAIFI Deficit) |
+### 2. Dasbor Monitoring Kinerja Unit Layanan Pelanggan (ULP)
+Memantau pencapaian KPI masing-masing unit layanan pelanggan secara spesifik dan terperinci:
+
+| 🏆 ULP Cibabat (Capaian NKO Tertinggi) | ULP Cimahi Kota |
 | :---: | :---: |
-| ![ULP Cibabat](assets/dashboard_pages/dashboard_page_13.png) | ![ULP Rajamandala](assets/dashboard_pages/dashboard_page_11.png) |
-
-| Peringkat #2: ULP Cimahi Kota | Peringkat #6: ULP Padalarang (Industrial Corridor) |
-| :---: | :---: |
-| ![ULP Cimahi Kota](assets/dashboard_pages/dashboard_page_3.png) | ![ULP Padalarang](assets/dashboard_pages/dashboard_page_5.png) |
-
-<details>
-<summary><b>🔍 Klik di sini untuk melihat tangkapan layar lengkap seluruh 7 ULP & Monitoring Sistem</b></summary>
-
-### 1. ULP Cimahi Selatan
-![ULP Cimahi Selatan](assets/dashboard_pages/dashboard_page_14.png)
-
-### 2. ULP Lembang (Area Wisata & Dataran Tinggi)
-![ULP Lembang](assets/dashboard_pages/dashboard_page_9.png)
-
-### 3. ULP Cililin (Area Distribusi Rural & Pedesaan)
-![ULP Cililin](assets/dashboard_pages/dashboard_page_7.png)
-
-### 4. Detail Kinerja Jaringan Distribusi Cililin
-![Detail Jaringan Cililin](assets/dashboard_pages/dashboard_page_8.png)
-
-### 5. Detail Kinerja Jaringan Distribusi Cimahi Kota
-![Detail Jaringan Cimahi Kota](assets/dashboard_pages/dashboard_page_4.png)
-
-### 6. Detail Monitoring Perluasan Padalarang
-![Detail Monitoring Padalarang](assets/dashboard_pages/dashboard_page_6.png)
-
-</details>
+| ![ULP Cibabat](assets/dashboard_pages/dashboard_page_13.png) | ![ULP Cimahi Kota](assets/dashboard_pages/dashboard_page_3.png) |
 
 ---
 
-## 🔌 Tier 3: Feeder Outage & Root-Cause Engineering Telemetry
+## 🧰 Teknologi yang Digunakan
 
-Analytical deep-dive into **313 feeder outage events** (218 Permanent Outages, 95 Temporary Outages) across the Medium Voltage (SUTM 20kV) network:
-
-![PLN Feeder Outage & Fault Analysis](assets/dashboard_pages/dashboard_page_10.png)
-
-### 1. Pareto Root-Cause Analysis (Penyebab Gangguan):
-```text
-+---------------------------------------------------------------------------------+
-|                       DISTRIBUSI PENYEBAB GANGGUAN JARINGAN                     |
-+--------------------------+-----------------------------+------------------------+
-| 🌳 Sentuhan Pohon: 19.5% | 🪁 Benang Layangan: 19.2%   | 🔌 Anomali Portal: 15% |
-| ⚡ Jointing Rusak: 12.1% | 🐒 Binatang/Burung: 11.8%   | 💥 SUTM & FCO: 7.0%    |
-+--------------------------+-----------------------------+------------------------+
-```
-> **Key Finding:** Kombinasi **Pohon rimbun (19.5%)** dan **Benang layangan (19.2%)** menyumbang hampir **40% total pemadaman listrik** di wilayah Cimahi dan Bandung Barat.
-
-### 2. TOP 10 Penyulang Sakit (Most Vulnerable Feeders):
-Identifikasi 10 jalur transmisi distribusi dengan frekuensi trip tertinggi:
-1. **Penyulang RJDL (Rajamandala):** `25 Total Gangguan` (16 Permanen, 9 Temporer) $\rightarrow$ *Top Bottleneck!*
-2. **Penyulang CPTT (Cipatat):** `29 Total Gangguan` (14 Permanen, 15 Temporer)
-3. **Penyulang CKLW (Cikalongwetan):** `18 Total Gangguan` (13 Permanen, 5 Temporer)
-4. **Penyulang GLNG (Gununghalu):** `20 Total Gangguan` (9 Permanen, 11 Temporer)
-5. **Penyulang SDKT, LBSR, NLO, PTB, PRBY, SLCU**
+* **Visualisasi & BI:** Google Looker Studio
+* **Penyimpanan Data & ETL:** Google Sheets (Relational Formulas, Data Validation)
+* **Domain Metrik Kelistrikan:** SAIDI (System Average Interruption Duration Index), SAIFI (System Average Interruption Frequency Index), NKO (Nilai Kinerja Organisasi)
 
 ---
 
-## 📦 Tier 4: Supply Chain & Fast-Moving Material Auditing
-
-Monitoring logistik operasional gudang untuk suku cadang pemeliharaan jaringan distribusi:
-
-![PLN Supply Chain & Material Stock Auditing](assets/dashboard_pages/dashboard_page_12.png)
-
-* **Total Stok Fisik Gudang:** `849,464` unit material
-* **Total Pencatatan Sistem (SAP ERP):** `1,118,048` unit material
-* **Status Keseimbangan Material:**
-  * **Material Berlebih (Overstock):** `47 SKU (48.0%)`
-  * **Material Defisit (Stockout Risk):** `25 SKU (25.5%)` $\rightarrow$ *Perlu percepatan pengadaan FCO & trafo!*
-  * **Material Cukup:** `23.5%`
-
----
-
-## 🛠️ Data Pipeline & Engineering Methodology
-
-1. **Extraction & Ingestion:**
-   * Konsolidasi lembar kerja operasional dari 7 ULP ke dalam basis data terpusat Google Sheets via formula relasional dinamis.
-2. **Data Cleansing & Validation:**
-   * Standardisasi satuan metrik teknis (`menit/plg`, `kali/plg`, `GWh`, `MWh`, `Rp. Juta`, `Skor`).
-   * Eliminasi deviasi data anomali pada pencatatan baca meter (LBKB) dan migrasi prabayar.
-3. **Visual Architecture in Google Looker Studio:**
-   * Implementasi palette dark-mode korporat (`#2B343B` Dark Slate dengan aksen Biru/Kuning resmi PLN).
-   * Visual logic berbasis formula `CASE WHEN`:
-     - Hijau: Pencapaian $\ge 100\%$
-     - Kuning: Pencapaian $90\% - 99.9\%$
-     - Merah: Pencapaian $< 90\%$
-
----
-
-## 💡 Strategic Business Recommendations
-
-1. **RABEG (Rabas-Rabas Pohon) Terfokus:** Alokasi tim pemangkasan pohon difokuskan pada koridor penyulang **RJDL**, **CPTT**, dan **CKLW** untuk memangkas potensi 19.5% gangguan eksternal.
-2. **Edukasi Bahaya Kawat/Benang Layangan:** Penertiban dan sosialisasi bahaya bermain layangan berkawat di dekat gardu induk Padalarang dan Rajamandala (penyumbang 19.2% gangguan).
-3. **Rekonsiliasi Fisik vs SAP Logistik:** Audit fisik berkala pada 25 item material defisit untuk mencegah *downtime* penanganan gangguan akibat kekosongan stok isolator dan FCO.
-
----
-
-*Disusun dan diarsipkan oleh Rifasa Hadiarto • Proyek Portofolio Resmi Data & BI Analyst • 2026*
+*Disusun oleh Rifasa Hadiarto • Proyek Portofolio Data & Business Intelligence Analyst*
