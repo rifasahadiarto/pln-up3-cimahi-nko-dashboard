@@ -10,6 +10,15 @@ An end-to-end multi-tier Executive Operations & Business Intelligence system eng
 
 ---
 
+## 🖥️ Executive BI Suite Preview (Tier 1 Overview)
+
+![Executive NKO Dashboard UP3 Cimahi](assets/dashboard_pages/dashboard_page_1.png)
+
+> 🔗 **[Buka Dasbor Interaktif di Google Looker Studio](https://datastudio.google.com/reporting/744c4bea-9c47-44fc-a30f-f2afec72ebde/page/AFOVF)**  
+> 📑 **[Unduh Dokumen Laporan Lengkap 14 Halaman Dasbor (PDF)](assets/pln_nko_complete_dashboard_report_2025.pdf)**
+
+---
+
 ## 📌 Executive Summary & Architecture Hierarchy
 
 As one of the critical electricity distribution hubs in West Java, **PT PLN (Persero) UP3 Cimahi** oversees power distribution across municipal and mountainous suburban topographies (encompassing Cimahi City and West Bandung Regency). 
@@ -27,9 +36,6 @@ flowchart TD
     style C fill:#1E293B,stroke:#F59E0B,stroke-width:2px,color:#fff
     style D fill:#1E293B,stroke:#8B5CF6,stroke-width:2px,color:#fff
 ```
-
-> 📑 **[Unduh Dokumen Laporan Lengkap 14 Halaman Dasbor (PDF)](assets/pln_nko_complete_dashboard_report_2025.pdf)**  
-> 🔗 **[Buka Dasbor Interaktif di Google Looker Studio](https://datastudio.google.com/reporting/744c4bea-9c47-44fc-a30f-f2afec72ebde/page/AFOVF)**
 
 ---
 
@@ -70,11 +76,47 @@ A comparative operational diagnostic evaluating all 7 sub-units under UP3 Cimahi
 | **6** | **ULP Padalarang** | 1,310.40 | **1,142.59** | **-167.81** | 288 | 7 | 65 | Koridor industri padat; SAIDI membengkak ke 1.387 menit/plg, SAIFI mencapai 21.86 kali/plg. |
 | **7** | **ULP Rajamandala** | 1,310.40 | **1,099.73** | **-210.67** | 296 | 9 | 55 | 🚨 **Defisit Kritis:** SAIFI mencapai 45.36 kali/plg (-62.26 pt) dan SAIDI 2.722 menit/plg (-54.18 pt). |
 
+### 📸 Visualisasi Dasbor Unit Layanan Pelanggan (Sample Top & Priority Units):
+
+#### 🏆 Performa Tertinggi vs 🚨 Unit Prioritas Penguatan Jaringan:
+| 🏆 Peringkat #1: ULP Cibabat (Highest NKO) | 🚨 Peringkat #7: ULP Rajamandala (Critical SAIDI/SAIFI Deficit) |
+| :---: | :---: |
+| ![ULP Cibabat](assets/dashboard_pages/dashboard_page_13.png) | ![ULP Rajamandala](assets/dashboard_pages/dashboard_page_11.png) |
+
+| Peringkat #2: ULP Cimahi Kota | Peringkat #6: ULP Padalarang (Industrial Corridor) |
+| :---: | :---: |
+| ![ULP Cimahi Kota](assets/dashboard_pages/dashboard_page_3.png) | ![ULP Padalarang](assets/dashboard_pages/dashboard_page_5.png) |
+
+<details>
+<summary><b>🔍 Klik di sini untuk melihat tangkapan layar lengkap seluruh 7 ULP & Monitoring Sistem</b></summary>
+
+### 1. ULP Cimahi Selatan
+![ULP Cimahi Selatan](assets/dashboard_pages/dashboard_page_14.png)
+
+### 2. ULP Lembang (Area Wisata & Dataran Tinggi)
+![ULP Lembang](assets/dashboard_pages/dashboard_page_9.png)
+
+### 3. ULP Cililin (Area Distribusi Rural & Pedesaan)
+![ULP Cililin](assets/dashboard_pages/dashboard_page_7.png)
+
+### 4. Detail Kinerja Jaringan Distribusi Cililin
+![Detail Jaringan Cililin](assets/dashboard_pages/dashboard_page_8.png)
+
+### 5. Detail Kinerja Jaringan Distribusi Cimahi Kota
+![Detail Jaringan Cimahi Kota](assets/dashboard_pages/dashboard_page_4.png)
+
+### 6. Detail Monitoring Perluasan Padalarang
+![Detail Monitoring Padalarang](assets/dashboard_pages/dashboard_page_6.png)
+
+</details>
+
 ---
 
 ## 🔌 Tier 3: Feeder Outage & Root-Cause Engineering Telemetry
 
 Analytical deep-dive into **313 feeder outage events** (218 Permanent Outages, 95 Temporary Outages) across the Medium Voltage (SUTM 20kV) network:
+
+![PLN Feeder Outage & Fault Analysis](assets/dashboard_pages/dashboard_page_10.png)
 
 ### 1. Pareto Root-Cause Analysis (Penyebab Gangguan):
 ```text
@@ -100,6 +142,9 @@ Identifikasi 10 jalur transmisi distribusi dengan frekuensi trip tertinggi:
 ## 📦 Tier 4: Supply Chain & Fast-Moving Material Auditing
 
 Monitoring logistik operasional gudang untuk suku cadang pemeliharaan jaringan distribusi:
+
+![PLN Supply Chain & Material Stock Auditing](assets/dashboard_pages/dashboard_page_12.png)
+
 * **Total Stok Fisik Gudang:** `849,464` unit material
 * **Total Pencatatan Sistem (SAP ERP):** `1,118,048` unit material
 * **Status Keseimbangan Material:**
