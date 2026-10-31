@@ -1,4 +1,4 @@
-# ⚡ PT PLN (Persero) UP3 Cimahi — Dashboard Monitoring Kinerja Organisasi (NKO) & Operasional Jaringan
+# PT PLN (Persero) UP3 Cimahi — Dashboard Monitoring Kinerja Organisasi (NKO) & Operasional Jaringan
 
 [![Google Looker Studio](https://img.shields.io/badge/Google-Looker%20Studio-4285F4?style=for-the-badge&logo=Google-Cloud&logoColor=white)](https://lookerstudio.google.com/)
 [![Google Sheets](https://img.shields.io/badge/Google-Sheets%20Database-34A853?style=for-the-badge&logo=Google-Sheets&logoColor=white)](https://developers.google.com/sheets)
@@ -9,35 +9,35 @@ Proyek ini merupakan perancangan dan implementasi sistem Business Intelligence b
 
 ---
 
-## 🖥️ Tampilan Dasbor Utama (Executive Overview)
+## Tampilan Dasbor Utama (Executive Overview)
 
 Dasbor eksekutif yang merangkum kesehatan kinerja organisasi UP3 Cimahi secara menyeluruh dengan indikator warna otomatis (*traffic light*):
 
 ![Executive NKO Dashboard UP3 Cimahi](assets/dashboard_pages/dashboard_page_1.png)
 
-> 🔗 **[Buka Dasbor Interaktif di Google Looker Studio](https://datastudio.google.com/reporting/744c4bea-9c47-44fc-a30f-f2afec72ebde/page/AFOVF)**  
-> 📑 **[Lihat Dokumen Laporan Lengkap (PDF)](assets/pln_nko_complete_dashboard_report_2025.pdf)**
+> **[Buka Dasbor Interaktif di Google Looker Studio](https://datastudio.google.com/reporting/744c4bea-9c47-44fc-a30f-f2afec72ebde/page/AFOVF)**  
+> **[Lihat Dokumen Laporan Lengkap (PDF)](assets/pln_nko_complete_dashboard_report_2025.pdf)**
 
 ---
 
-## 🎯 Dampak Nyata Proyek bagi PT PLN UP3 Cimahi
+## Dampak Nyata Proyek bagi PT PLN UP3 Cimahi
 
 Implementasi dasbor ini memberikan dampak nyata langsung terhadap operasional dan pengambilan keputusan manajemen:
 
-1. **⏱️ Efisiensi Waktu Pelaporan Hingga 80%**
+1. ** Efisiensi Waktu Pelaporan Hingga 80%**
    - Menggantikan proses konsolidasi manual data spreadsheet antar 7 Unit Layanan Pelanggan (ULP) yang sebelumnya memakan waktu berhari-hari setiap akhir bulan menjadi otomatis dan terpusat dalam satu dasbor real-time.
 
-2. **🎯 Deteksi Cepat Titik Kritis & Unit Defisit**
+2. ** Deteksi Cepat Titik Kritis & Unit Defisit**
    - Memudahkan manajemen mengidentifikasi unit dengan penurunan skor kinerja terbesar (seperti ULP Rajamandala dan ULP Padalarang) serta jalur penyulang dengan frekuensi padam tertinggi (*trip* terbanyak).
    - Penempatan tim teknis lapangan dan alokasi anggaran pemeliharaan jaringan menjadi jauh lebih terarah dan tepat sasaran.
 
-3. **📊 Pengambilan Keputusan Berbasis Data (Data-Driven)**
+3. ** Pengambilan Keputusan Berbasis Data (Data-Driven)**
    - Menyediakan *single source of truth* bagi jajaran manajemen dan asisten manajer dalam rapat evaluasi operasional bulanan/tahunan.
    - Evaluasi kesenjangan target (*gap analysis*) dapat dilakukan secara transparan per bidang fungsional (Pelayanan Pelanggan, Jaringan Distribusi, Transaksi Energi Listrik, Perencanaan, dan Keuangan).
 
 ---
 
-## 🛠️ Apa yang Dikerjakan
+## Apa yang Dikerjakan
 
 Lingkup pekerjaan mencakup proses end-to-end dari pengolahan data mentah hingga penyajian analitik visual:
 
@@ -57,7 +57,7 @@ Lingkup pekerjaan mencakup proses end-to-end dari pengolahan data mentah hingga 
 
 ---
 
-## 📸 Tangkapan Layar Dasbor Operasional
+## Tangkapan Layar Dasbor Operasional
 
 ### 1. Dasbor Rekapitulasi Gangguan Penyulang (Keandalan Jaringan)
 Memantau frekuensi gangguan listrik, durasi padam, dan performa keandalan penyulang di seluruh wilayah kerja UP3 Cimahi:
@@ -69,13 +69,13 @@ Memantau frekuensi gangguan listrik, durasi padam, dan performa keandalan penyul
 ### 2. Dasbor Monitoring Kinerja Unit Layanan Pelanggan (ULP)
 Memantau pencapaian KPI masing-masing unit layanan pelanggan secara spesifik dan terperinci:
 
-| 🏆 ULP Cibabat (Capaian NKO Tertinggi) | ULP Cimahi Kota |
+| ULP Cibabat (Capaian NKO Tertinggi) | ULP Cimahi Kota |
 | :---: | :---: |
 | ![ULP Cibabat](assets/dashboard_pages/dashboard_page_13.png) | ![ULP Cimahi Kota](assets/dashboard_pages/dashboard_page_3.png) |
 
 ---
 
-## 🧰 Teknologi yang Digunakan
+## Teknologi yang Digunakan
 
 * **Visualisasi & BI:** Google Looker Studio
 * **Penyimpanan Data & ETL:** Google Sheets (Relational Formulas, Data Validation)
