@@ -83,4 +83,4 @@ Memantau pencapaian KPI masing-masing unit layanan pelanggan secara spesifik dan
 
 ---
 
-*Disusun oleh Rifasa Hadiarto • Proyek Portofolio Data & Business Intelligence Analyst*
+*Disusun oleh Rifasa Hadiarto
